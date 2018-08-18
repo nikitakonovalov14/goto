@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>hello</h1>
+<form action="/my/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input name="key" id="1" type="text"/>
+    <label for="1">Текст:</label>
+    <input type="submit">
+
+
+</form>
+{% for item in data  %}
+    <form action="/my/">
+        <h1>{{item}}</h1><input type="hidden" value="{{ item }}" name="n"> <input type="submit" value="забито" name="no"><input type="submit" value="сделано" name="yes">
+    </form>
+{% endfor %}
+<h1>забито {{ no }}</h1>
+<h1>сделано {{ yes }}</h1>
+</body>
+</html>
